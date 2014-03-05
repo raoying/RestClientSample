@@ -25,6 +25,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private static final String URL_STR = "https://alpha-api.app.net/stream/0/posts/stream/global";
@@ -83,7 +84,7 @@ public class MainActivity extends Activity {
 		Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-               
+            	Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         };
 
